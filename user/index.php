@@ -6,6 +6,7 @@ require dirname(__DIR__).('../templates/connection.php');
 {
     session_destroy();
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +48,7 @@ require dirname(__DIR__).('../templates/connection.php');
 
                     $sql = "SELECT * 
                             FROM `course` AS C, `registration_course` AS R 
-                            WHERE C.course_id = R.course_id";
+                            WHERE C.course_id = R.course_id AND (CURDATE() < opening_date)";
                     $result = mysqli_query($conn, $sql);
                     if ($result) {
                         while ($row = mysqli_fetch_assoc($result)) {
@@ -80,9 +81,9 @@ require dirname(__DIR__).('../templates/connection.php');
                             </tr>
                     <?php
 
-                    $sql = "SELECT * 
+                    $sql = "SELECT *
                             FROM `course` AS C, `registration_course` AS R 
-                            WHERE C.course_id = R.course_id";
+                            WHERE (C.course_id = R.course_id) AND (CURDATE() BETWEEN opening_date AND closing_date)";
                     $result = mysqli_query($conn, $sql);
                     if ($result) {
                         while ($row = mysqli_fetch_assoc($result)) {
@@ -116,7 +117,7 @@ require dirname(__DIR__).('../templates/connection.php');
 
                     $sql = "SELECT * 
                             FROM `course` AS C, `registration_course` AS R 
-                            WHERE C.course_id = R.course_id";
+                            WHERE C.course_id = R.course_id AND (CURDATE() > closing_date)";
                     $result = mysqli_query($conn, $sql);
                     if ($result) {
                         while ($row = mysqli_fetch_assoc($result)) {
