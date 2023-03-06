@@ -80,11 +80,7 @@
               <strong>IMPLEMENTATION</strong>
             </h4>
             <p class ="pt-1 fs-5">
-              <?php if ($result['implementation']) {?>
-                <?php echo $result['implementation'];?>
-              <?php }else { 
-                  echo "N/A";?>
-              <?php } ?>
+              <?php echo $result['implementation'];?>
             </p>
           </div>
           
