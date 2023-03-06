@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,18 +10,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <link rel="stylesheet" type="text/css" href="../assets/css/instructor_style.css">
-
-
-  </head>
-
-  <body>
-    <?php 
-    session_start();
-     require '../templates/header.php';
-     require '../templates/navigation.php'; 
-     ?>
-
-
 <style>
   .box1 {
   width: auto;
@@ -43,7 +32,31 @@ form span{
   }
 
 </style>
-      <Center> 
+
+  </head>
+
+  <body>
+
+<?php
+session_start();
+  #include 'connectdb.php';
+  require '../templates/connection.php';
+  require '../templates/header.php';
+  require '../templates/navigation.php';
+
+  if(isset($_GET['add1'])){
+    $userid=$_GET['add1'];
+    $query= "SELECT * FROM account_details  WHERE account_id='$userid'";
+     $result = mysqli_query($conn,$query); 
+
+  if (mysqli_num_rows($result)){
+    while ($row =mysqli_fetch_array($result))
+    {
+      $account_id=$row['account_id'];
+    }
+  ?>
+    
+<center>
     <div class="box1">
           <form action="update_add_data.php" method="post">
             <div class = "col">
@@ -56,7 +69,7 @@ form span{
               <span>ACCOUNT ID</span>
             </div>
               <div class = "col">
-                <input type="text" name="acc_id">
+                <input type="text" name="acc_id" value="<?php echo  $account_id;?>"readonly>
               </div>
 
             <div class = "col">
@@ -91,11 +104,9 @@ form span{
               <button type="submit" name="insert" >Add </button>
             </div>
           </form>
-      </Center>
     </div>
-
-   </body>
-   </html>
-
-
- 
+    <?php }
+    } ?>
+    </Center>
+</body>
+</html>
