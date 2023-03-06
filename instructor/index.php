@@ -66,7 +66,7 @@ body{
     </form>
       <br>
 
-    <form class="btn-search" action="Add.php" method="POST">
+    <form class="btn-search" action="add_display.php" method="POST">
       <button id='Add' type="submit" name="insert" ><i class="fa-solid fa-user-plus"></i>   Add </button>
     </form>
     </div>
