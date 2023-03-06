@@ -60,12 +60,19 @@
 					<input style='font-size: 17px;' type="number" name="number_of_days" id ='number-of-days' required>
 				</div>
 				<div class = "form-row mt-2">
-					<label for = 'mtap-course' class = "fw-bold" style="color: #5B5B5B">MTAP Course</label>
-					<input style='font-size: 17px;' type="text" name="mtap_course" id ='mtap-course'>
-				</div>
-				<div class = "form-row mt-2">
 					<label for = 'mtap-course' class = "fw-bold" style="color: #5B5B5B"> Implementation</label>
-					<input style='font-size: 17px;' type="text" name="implementation" id ='Implementation'>
+					<select class = "fs-5 p-2" name = "implementation" id = "implementation" required>
+						<option value = "" disabled>Select Implementation Period</option>
+						<option value = "1">1st Quarter</option>
+						<option value = "2">2nd Quarter</option>
+						<option value = "3">3rd Quarter</option>
+						<option value = "4">4th Quarter</option>
+						
+					</select>
+				</div>
+				<div class = "mt-5 form-check">
+					<input type="checkbox" name="mtap_course" id = "mtap-course" class = "form-check-input" style = "height:20px; width:20px; margin-right:10px">
+					<label class = "form-check-label fs-5 fw-bold" style  ="color:#5b5b5b;" for = "mtap-course" required> MTAP Course</label>
 				</div>
 				<br>
 				<center>

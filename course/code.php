@@ -10,46 +10,33 @@ if(isset($_POST['save_course']))
     $mtap_course = mysqli_real_escape_string($conn, $_POST['mtap_course']);
     $implementation = mysqli_real_escape_string($conn, $_POST['implementation']);
 
-    $query = "SELECT course_title FROM course WHERE course_title='$course_title'";
+    $query = "
+        SELECT * 
+        FROM course 
+        WHERE course_title='$course_title' 
+        AND number_of_days = '$number_of_day'
+        AND mtap_course = '$mtap_course'
+        AND implementation = '$implementation'
+        ";
+    
     $query_run = mysqli_query($conn, $query);
-
     $result = mysqli_fetch_assoc($query_run);
-    if ($result['course_title']) {
-
-        $query = "UPDATE course SET number_of_days='$number_of_days', mtap_course='$mtap_course', implementation='$implementation' WHERE course_title='$course_title'";
+    
+    if (!$result) {
+        $query = "
+            INSERT INTO course (course_title,number_of_days,mtap_course,implementation) 
+            VALUES ('$course_title','$number_of_days','$mtap_course','$implementation')
+        ";
         $query_run = mysqli_query($conn, $query);
-
-        if($query_run)
-        {
-            $_SESSION['message'] = "Course exists!";
-            header("Location: index.php");
-            exit(0);
-        }
-        else
-        {
-            $_SESSION['message'] = "Course not updated!";
-            header("Location: index.php");
-            exit(0);
-        }
+        
+        $SESSION_MESSAGE = $query_run ? "Course Created" : "Something went wrong";
 
     } else {
-    
-        $query = "INSERT INTO course (course_title,number_of_days,mtap_course,implementation) VALUES ('$course_title','$number_of_days','$mtap_course','$implementation')";
-        $query_run = mysqli_query($conn, $query);
-
-        if($query_run)
-        {
-            $_SESSION['message'] = "Course Created!";
-            header("Location: index.php");
-            exit(0);
-        }
-        else
-        {
-            $_SESSION['message'] = "Course Not Created!";
-            header("Location: index.php");
-            exit(0);
-        }
+        $_SESSION['message'] = "Something went wrong!";  
     }
+    
+    header("Location: index.php");
+    exit(0);
 }
 
 
