@@ -205,7 +205,7 @@ if(isset($_GET['deleteBtn'])){
 	<div class="container-md d-flex flex-column my-5">
 		<!--TITLE-->
 		<div class="row-md my-5">
-			<h1 class="display-3" style=" font-family: Montserrat;">Search Database</h1>
+			<h1 class="display-3" style=" font-family: Montserrat;">Search for Enrolled Students</h1>
 		</div>
 
 		<!--SEARCH & FILTER-->

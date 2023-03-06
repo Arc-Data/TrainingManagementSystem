@@ -97,7 +97,7 @@
         <div class="col">
             <a class= "text-decoration-none" href="search_database.php">
                 <div class="rectangle d-flex align-items-center"> 
-                    <h1 style="color:white; text-align: center; font-size: 40px;">SEARCH DATABASE</h1>
+                    <h1 style="color:white; text-align: center; font-size: 40px;">SEARCH STUDENTS ENROLLED</h1>
                 </div>
             </a>
         </div>
