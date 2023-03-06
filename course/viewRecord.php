@@ -93,11 +93,7 @@
               <strong>MTAP COURSE</strong>
             </h4>
             <p class ="pt-1 fs-5">
-              <?php if ($result['mtap_course']) {?>
-                <?php echo $result['mtap_course'];?>
-              <?php } else { 
-                  echo "N/A";?>
-              <?php } ?>
+                <?php echo $result['mtap_course'] ? "Yes" : "No";?>
             </p>
           </div>
 

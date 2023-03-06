@@ -61,7 +61,7 @@
 				</div>
 				<div class = "form-row mt-2">
 					<label for = 'mtap-course' class = "fw-bold" style="color: #5B5B5B"> Implementation</label>
-					<select class = "fs-5 p-2" name = "implementation" id = "implementation">
+					<select class = "fs-5 p-2" name = "implementation" id = "implementation" required>
 						<option value = "" disabled>Select Implementation Period</option>
 						<option value = "1">1st Quarter</option>
 						<option value = "2">2nd Quarter</option>
@@ -72,7 +72,7 @@
 				</div>
 				<div class = "mt-5 form-check">
 					<input type="checkbox" name="mtap_course" id = "mtap-course" class = "form-check-input" style = "height:20px; width:20px; margin-right:10px">
-					<label class = "form-check-label fs-5 fw-bold" style  ="color:#5b5b5b;" for = "mtap-course"> MTAP Course</label>
+					<label class = "form-check-label fs-5 fw-bold" style  ="color:#5b5b5b;" for = "mtap-course" required> MTAP Course</label>
 				</div>
 				<br>
 				<center>
