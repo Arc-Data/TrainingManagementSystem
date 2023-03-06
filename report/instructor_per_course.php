@@ -4,10 +4,8 @@
 $username = "root";
 $password = "";
 $databaseName = "databasey";
-
 $connect = mysqli_connect($hostname, $username, $password, $databaseName);
 $query = "SELECT * FROM `course`";
-
 $result1 = mysqli_query($connect, $query);
  */
 ?>
@@ -65,7 +63,6 @@ $result1 = mysqli_query($connect, $query);
 			<?php
 			session_start();
 		    /* $conn = mysqli_connect($hostname, $username, $password, $databaseName);
-
 		    if ($conn->connect_error) {
 		        die("Connection failed: " . $conn->connect_error);
 		    } */
@@ -104,6 +101,9 @@ $result1 = mysqli_query($connect, $query);
 				</thead>
 				<br>
 				<br>
+                <!-- Printing Excel-->
+                
+                <a href="downloadinstructor.php"> <button type="submit" class="" name="submit"> DOWNLOAD EXCEL FILE </button> </a>
 
 				<tbody>
 				<?php
@@ -111,15 +111,11 @@ $result1 = mysqli_query($connect, $query);
 					$username = "root";
 					$password = "";
 					$database = "databasey";
-
 					// Create connection
 					$connection = new mysqli($servername, $username, $password, $database);
-
 					// Check connection
 					if ($connection->connect_error) {
 						die("Connection failed: " . $connection->connect_error);
-
-
 					} */
 					require '../templates/connection.php';
 					require '../templates/header.php';

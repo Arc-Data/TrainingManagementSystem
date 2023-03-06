@@ -1,5 +1,6 @@
 <?php
-$connection = mysqli_connect("localhost:3308","root","","databasey");
+//$connection = mysqli_connect("localhost:3308","root","","databasey");
+include '../templates/connection.php'
 ?>
     <table class="table table-stripped table-hover">
 		    	<thead>
@@ -9,16 +10,16 @@ $connection = mysqli_connect("localhost:3308","root","","databasey");
 						<th>Last Name</th>
 						<th>First Name</th>
 						<th>Middle Name</th>
-						<th>Designation</th>
+						<!-- <th>Designation</th> -->
 					</tr>
 				</thead>
 <?php
 	$sql = "SELECT * FROM pool_instructor_details Inner Join account_details On pool_instructor_details.account_id = account_details.account_id Inner Join registration_course On registration_course.instructor_id = pool_instructor_details.instructor_id  
     Inner Join course On registration_course.course_id = course.course_id ";
-    $result = $connection->query($sql);
+    $result = $conn->query($sql);
 
     if (!$result) {
-    die("Query failed: " . $connection->error);
+    die("Query failed: " . $conn->error);
     }
         
 
@@ -30,7 +31,7 @@ $connection = mysqli_connect("localhost:3308","root","","databasey");
                 <td>". $row["lastname"] ."</td>
                 <td>". $row["firstname"] ."</td>
                 <td>". $row["middlename"] ."</td>
-                <td>". $row["designation"] ."</td>
+                
             </tr>";
         
         }
