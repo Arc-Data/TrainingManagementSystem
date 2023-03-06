@@ -27,12 +27,18 @@ include '../templates/connection.php';
     $sql = "INSERT INTO pool_instructor_details(account_id, rank, qualification_degree,course_specialization,other_qualification) VALUES ('$acc_id','$rank','$qualification_degree ','$course_specialization','$other_qualification')";
     $result = mysqli_query($conn,$sql);
     
-    if ($result == TRUE) {
-      echo "New record created successfully.";
-    }else{
-      echo "Error:". $sql . "<br>". $conn->connect_error;
-    } 
-    $conn->close(); 
+    if($query_run)
+    {
+        $_SESSION['message'] = "Create Successfully!";
+        header("Location: create_instructor.php");
+        exit(0);
+    }
+    else
+    {
+        $_SESSION['message'] = "Something went wrong!";  
+        header("Location: create_instructor.php");
+        exit(0);
+    }
   }
 ?>
 
@@ -55,6 +61,7 @@ include '../templates/connection.php';
     }
   </style>
 </head>
+<?php include '../assets/popup/message.php';?>
 <body style="text-align:center; font-family: Montserrat;">
 <br><br><br><a href = "index.php" class = "text-decoration-none" style = "padding-left:5px; float:left; font-size:15px; color: #681a1a; margin-left: 10px">&#8592; Back to View</a>
 <?php

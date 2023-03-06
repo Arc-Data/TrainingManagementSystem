@@ -11,6 +11,7 @@
 
 <link rel="stylesheet" type="text/css" href="../assets/css/instructor_style.css">
 <style>
+  
   .box1 {
   width: auto;
   height: auto;
@@ -55,10 +56,11 @@ session_start();
       $account_id=$row['account_id'];
     }
   ?>
-    
+    <br><br><br><a href = "index.php" class = "text-decoration-none" style = "font-size:15px; color: #681a1a; margin-left: 10px">&#8592; Back to View</a>
 <center>
+  
     <div class="box1">
-      <h1>Add Instructor Details</h1><br><br>
+      <h1>Add Instructor Details</h1><br>
           <form action="update_add_data.php" method="post">
             <!-- <div class = "col">
               <span>INSTRUCTOR ID</span>

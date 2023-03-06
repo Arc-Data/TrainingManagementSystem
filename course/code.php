@@ -29,7 +29,7 @@ if(isset($_POST['save_course']))
         ";
         $query_run = mysqli_query($conn, $query);
         
-        $SESSION_MESSAGE = $query_run ? "Course Created" : "Something went wrong";
+        $_SESSION['message'] = "Course Created";
 
     } else {
         $_SESSION['message'] = "Something went wrong!";  
