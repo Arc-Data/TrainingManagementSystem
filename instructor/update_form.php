@@ -49,27 +49,42 @@ session_start();
       $othqua=$row['other_qualification'];
     }
     ?>
+    <br><br><h1>Update Instructor</h1><br>
     <form action="update_add_data.php" method="post">
-    <input type="text" name="instrucid" value="<?php echo $instructor_id;?>">
-     <span>INSTRUCTOR ID</span><br>
-     <input type="text" name="accid" value="<?php echo  $account_id;?>"readonly>
+    <span>INSTRUCTOR ID</span><br>
+    <input type="text" name="instrucid" value="<?php echo $instructor_id;?>"><br><br>
+     
      <span>ACCOUNT ID</span><br>
-     <input type="text" name="rank" value="<?php echo  $rank;?>">
+     <input type="text" name="accid" value="<?php echo  $account_id;?>"readonly><br><br>
+     
      <span>rank</span><br>
-     <input type="text" name="last" value="<?php echo  $lastname;?>"readonly>
+     <input type="text" name="rank" value="<?php echo  $rank;?>"><br><br>
+     
      <span>last name</span><br>
-     <input type="text" name="first" value="<?php echo  $firstname;?>"readonly>
+     <input type="text" name="last" value="<?php echo  $lastname;?>"readonly><br><br>
+     
      <span>first name</span><br>
-     <input type="text" name="middle" value="<?php echo  $middlename;?>"readonly>
+     <input type="text" name="first" value="<?php echo  $firstname;?>"readonly><br><br>
+     
+     
      <span>middle name</span><br>
-     <input type="text" name="suffix" value="<?php echo  $suffix;?>"readonly>
+     <input type="text" name="middle" value="<?php echo  $middlename;?>"readonly><br><br>
+     
+     
      <span>suffix</span><br>
-     <input type="text" name="quadeg" value="<?php echo  $quadeg;?>">
+     <input type="text" name="suffix" value="<?php echo  $suffix;?>"readonly><br><br>
+     
+     
      <span>qualification degree</span><br>
-     <input type="text" name="couspe" value="<?php echo  $couspe;?>">
+     <input type="text" name="quadeg" value="<?php echo  $quadeg;?>"><br><br>
+     
+
      <span>Course Specialization</span><br>
-     <input type="text" name="othqua" value="<?php echo  $othqua;?> ">
+     <input type="text" name="couspe" value="<?php echo  $couspe;?>"><br><br>
+     
      <span>Other Qualification</span><br>
+     <input type="text" name="othqua" value="<?php echo  $othqua;?> "><br><br>
+     
      <div>
      <button type="submit" name="update" >Update </button>
      </div>

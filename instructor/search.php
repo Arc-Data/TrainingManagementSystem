@@ -17,6 +17,7 @@
     <br><br>
     <br><a href = "index.php" class = "text-decoration-none" style = "font-size:15px; color: #681a1a; margin-left: 10px">&#8592; Back to View</a>
 <center>
+  <h1>Instructors Found</h1><br><br><br>
 <?php
 session_start();
   #include 'connectdb.php';

@@ -58,13 +58,14 @@ session_start();
     
 <center>
     <div class="box1">
+      <h1>Add Instructor Details</h1><br><br>
           <form action="update_add_data.php" method="post">
-            <div class = "col">
+            <!-- <div class = "col">
               <span>INSTRUCTOR ID</span>
             </div>
               <div class = "col">
                 <input type="text" name="id" >
-             </div>
+             </div> -->
             <div class = "col">
               <span>ACCOUNT ID</span>
             </div>
@@ -101,7 +102,7 @@ session_start();
               </div>
               <br>
             <div>
-              <button type="submit" name="insert" >Add </button>
+              <button type="submit" name="insert" >Save </button>
             </div>
           </form>
     </div>
