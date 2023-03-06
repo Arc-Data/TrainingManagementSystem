@@ -9,8 +9,9 @@
 
 
         body {
-            
+
             font-family: 'Montserrat', sans-serif;
+            overflow: hidden; /* Hide scrollbars */
         }
 
         .rectangle {
@@ -34,7 +35,7 @@
             border-radius: 15px;
             margin-top: 50px;
         }
-    
+
 
         .cclass{
             position: absolute;
@@ -67,7 +68,7 @@
             color: #FFFFFF;
         }
 
-        
+
     .custom-shape-divider-bottom-1676706408 {
     position: absolute;
     bottom: 0;
@@ -131,14 +132,17 @@
     </style>
 </head>
 
+<br><br><br><a href = "../user/index.php" class = "text-decoration-none" style = "font-size:15px; color: #681a1a; margin-left: 10px">&#8592; View ongoing courses</a>
 <body style="font-family: Montserrat;">
+
+<header>
 
     <?php
     require '../templates/navigation.php';
     $sql = "SELECT COUNT(account_id) AS student_total FROM account_details WHERE user_type='student'";
 
     $result = mysqli_query($conn,$sql);
-    $no_students = mysqli_fetch_assoc($result); 
+    $no_students = mysqli_fetch_assoc($result);
 
     $sql = "SELECT COUNT(account_id) AS instructor_total FROM account_details WHERE user_type='instructor'";
 
@@ -160,11 +164,11 @@
         </div>
         <div class="col">
             <div class="rectangle3"><h1 style="color: white; text-align:center; padding-top: 70px; font-size:35px;"> <i class="fas fa-book"></i> CLASSES <br><br><?php echo $no_classes['class_total'];?> </h1></div>
-        </div>  
-            
+        </div>
+
 </div>
     </div>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 </body>
@@ -183,14 +187,14 @@
       <div class ="first-class">
         <table>
                <tr> <br>
-                <h1 class="fc-h1>">Training Management System</h1> <br> 
+                <h1 class="fc-h1>">Training Management System</h1> <br>
                 <h4 class="fc-h4"> WEB DEVELOPMENT </h4> </tr> <br> <br> <br> <br>
         </table>
       </div>
-     
+
 <div class="col">
     <div class="icon1">
-    <h5 style="color:#FFFFFA; font-size:15px;"> Keep In Touch </h5> 
+    <h5 style="color:#FFFFFA; font-size:15px;"> Keep In Touch </h5>
     <i class="fab fa-facebook-f pt-1" style="font-size:25px; color:white"></i>
     <i class="fab fa-twitter pt-1 p-3" style="font-size:25px;color:white " ></i>
     <i class="fab fa-google pt-1 p-3" style="font-size:25px;color:white " ></i>
@@ -201,10 +205,10 @@
 
 
 <div class="icon3">
-    <h5 style="color:#FFFFFA; font-size:15px;"> Email: trainingsystem@gmail.com </h5> 
-    <h5 style="color:#FFFFFA; font-size:15px;"> Phone No.: +639 </h5> 
+    <h5 style="color:#FFFFFA; font-size:15px;"> Email: trainingsystem@gmail.com </h5>
+    <h5 style="color:#FFFFFA; font-size:15px;"> Phone No.: +639 </h5>
 </div>
-         
+
 </footer>
 
 </html>
