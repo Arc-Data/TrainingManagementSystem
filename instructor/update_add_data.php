@@ -41,11 +41,11 @@ session_start();
     
 
     if (mysqli_num_rows($result) > 0) {?>
-      <a href="Add.php">
+      <form action="add_display.php" method="post"> 
       <div>
-      <button class="button5">BACK</button>
+      <button class="button5" name="insert">BACK</button>
       <p class="addfail ">Account ID already Exist in Instructor Details!</p>
-       </div></a><?php
+       </div></form><?php
   	}else{
       $query= "INSERT INTO `pool_instructor_details`(`instructor_id`, `account_id`, `rank`, `qualification_degree`, `course_specialization`, `other_qualification`) 
       VALUES ('$id','$acc_id','$rank','$quadeg','$couspe','$othqua')";
