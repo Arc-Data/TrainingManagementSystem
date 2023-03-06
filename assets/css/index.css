@@ -1,7 +1,7 @@
 body {
     min-height: 100vh;
     margin: 0;
-    background-color: #F5F7FA;
+    background-color: #e9e9e9;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -64,7 +64,7 @@ section {
 }
 
 td {
-    border-bottom: 1px solid #e1f1ff;
+    border-bottom: 1px solid #e9e9e9;
     padding: 4px;
 }
 
@@ -75,7 +75,7 @@ td {
 
     .course-type {
         border-bottom: none;
-        border-right: 1px solid #e1f1ff;
+        border-right: 1px solid #e9e9e9;
         padding-top: 25px;
         padding-left: 17px;
         padding-right: 17px;
