@@ -7,7 +7,7 @@ if(isset($_POST['save_course']))
 
     $course_title = mysqli_real_escape_string($conn, $_POST['course_title']);
     $number_of_days = mysqli_real_escape_string($conn, $_POST['number_of_days']);
-    $mtap_course = $_POST['mtap_course'];
+    $mtap_course = $_POST['mtap_course'] ? 1 : 0;
     $implementation = mysqli_real_escape_string($conn, $_POST['implementation']);
     $implementation_year = mysqli_real_escape_string($conn, $_POST['implementation_year']);
     $year_certified = mysqli_real_escape_string($conn, $_POST['year_certified']);
@@ -50,10 +50,13 @@ if(isset($_POST['update_course']))
     $id = mysqli_real_escape_string($conn, $_POST['id']);
     $course_title = mysqli_real_escape_string($conn, $_POST['course_title']);
     $number_of_days = mysqli_real_escape_string($conn, $_POST['number_of_days']);
-    $mtap_course = mysqli_real_escape_string($conn, $_POST['mtap_course']);
+    $mtap_course = $_POST['mtap_course'] ? 1 : 0;
+    $year_certified = mysqli_real_escape_string($conn, $_POST['year_certified']);
     $implementation = mysqli_real_escape_string($conn, $_POST['implementation']);
+    $implementation_year = mysqli_real_escape_string($conn, $_POST['implementation_year']);
 
-    $query = "UPDATE course SET course_title='$course_title', number_of_days='$number_of_days', mtap_course='$mtap_course', implementation='$implementation' WHERE course_id='$id' ";
+
+    $query = "UPDATE course SET course_title='$course_title', number_of_days='$number_of_days', mtap_course='$mtap_course', implementation='$implementation', year_certified = '$year_certified', implementation_year = '$implementation_year' WHERE course_id='$id' ";
     $query_run = mysqli_query($conn, $query);
 
     if($query_run)
