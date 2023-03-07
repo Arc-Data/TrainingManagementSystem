@@ -19,14 +19,14 @@ require dirname(__DIR__).('../templates/connection.php');
     <title>User List</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/Button_Style.css">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
 
     <style>
     body {
       font-family: 'Montserrat', sans-serif;
     }
+    .hidetext { -webkit-text-security: disc; }
     </style>
-
 
 </head>
 
@@ -38,10 +38,10 @@ require dirname(__DIR__).('../templates/connection.php');
             require dirname(__DIR__).('../templates/navigation.php');
         ?>
 </header>
-    <div class="container pt-5">
+    <div class="container pt-2">
 
-        </button>
-        <table class="table mt-5">
+     
+        <table class="table mt-2">
             <thead>
                 <tr>
                     <th scope="col">Account ID</th>
@@ -73,7 +73,7 @@ require dirname(__DIR__).('../templates/connection.php');
                         echo ' <tr>
                     <th scope="row">' . $account_id . '</th>
                     <td>' . $username . '</td>
-                    <td>' . $password . '</td>
+                    <td class="hidetext">'. $password . '</td>
                     <td>' . $user_type . '</td>
                     <td>' . $lastname . '</td>
                     <td>' . $firstname . '</td>
