@@ -80,7 +80,7 @@
               <strong>IMPLEMENTATION</strong>
             </h4>
             <p class ="pt-1 fs-5">
-              <?php echo $result['implementation'];?>
+              <?= $result['implementation'] . " - ". $result['implementation_year'];?>
             </p>
           </div>
           
