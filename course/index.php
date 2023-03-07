@@ -47,7 +47,7 @@
 <body>
 	<?php include '../assets/popup/message.php';?>
 	<?php include '../templates/navigation.php';?>
-	<dialog id ='training-form'>
+	<dialog id ='training-form' class = "p-5">
 		<form method = "POST" action = "code.php">
 			<div class="form-container">
 				<h2> ADD TRAINING FORM </h2>
@@ -58,6 +58,10 @@
 				<div class = "form-row mt-2">
 					<label for = 'number-of-days' class = "fw-bold" style="color: #5B5B5B" >Number of Days <span class="asterisk">*</span></label>
 					<input style='font-size: 17px;' type="number" name="number_of_days" id ='number-of-days' required>
+				</div>
+				<div class = "form-row mt-2">
+					<label for = 'year_certified' class = "fw-bold" style="color: #5B5B5B" >Year Certified <span class="asterisk">*</span></label>
+					<input style = 'font-size: 17px;' type= "number" name="year_certified" id ='year_certified' min = "1990" required>
 				</div>
 				<div class = "form-row mt-2">
 					<label for = 'mtap-course' class = "fw-bold" style="color: #5B5B5B"> Implementation</label>
@@ -79,7 +83,7 @@
 				</div>
 				<br>
 				<center>
-				  <button name="save_course" type = "submit" class="btn btn-primary mt-3" id="submit-btn" >Submit</button> 
+				  <button name="save_course" type = "submit" class="btn btn-primary m-3" id="submit-btn" >Submit</button> 
         </center>
 			</div>
 		</form>

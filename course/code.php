@@ -7,11 +7,10 @@ if(isset($_POST['save_course']))
 
     $course_title = mysqli_real_escape_string($conn, $_POST['course_title']);
     $number_of_days = mysqli_real_escape_string($conn, $_POST['number_of_days']);
+    $mtap_course = $_POST['mtap_course'];
     $implementation = mysqli_real_escape_string($conn, $_POST['implementation']);
     $implementation_year = mysqli_real_escape_string($conn, $_POST['implementation_year']);
-    $implementation_year = strtotime('01-01-' . $implementation_year);
-    $implementation_year = date('Y-m-d', $implementation_year);
-    $mtap_course = $_POST['mtap_course'];
+    $year_certified = mysqli_real_escape_string($conn, $_POST['year_certified']);
 
     $query = "
         SELECT * 
@@ -21,6 +20,7 @@ if(isset($_POST['save_course']))
         AND mtap_course = '$mtap_course'
         AND implementation = '$implementation'
         AND implementation_year = '$implementation_year'
+        AND year_certified = '$year_certified'
         ";
     
     $query_run = mysqli_query($conn, $query);
@@ -28,8 +28,8 @@ if(isset($_POST['save_course']))
     
     if (!$result) {
         $query = "
-            INSERT INTO course (course_title,number_of_days,mtap_course,implementation, implementation_year) 
-            VALUES ('$course_title','$number_of_days','$mtap_course','$implementation', '$implementation_year')
+            INSERT INTO course (course_title,number_of_days,mtap_course,implementation, implementation_year, year_certified) 
+            VALUES ('$course_title','$number_of_days','$mtap_course','$implementation', '$implementation_year', '$year_certified')
         ";
         $query_run = mysqli_query($conn, $query);
         
