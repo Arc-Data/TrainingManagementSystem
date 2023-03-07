@@ -97,13 +97,31 @@ if(isset($_GET['deleteBtn'])){
     //$query = "DELETE FROM registration_participants_class WHERE student_id = $id AND course_reg_id = $class_number";
 	$query = "DELETE FROM registration_participants_class WHERE student_id = $id ";
 
-    mysqli_query($conn,$query);
+    if(mysqli_query($conn,$query)){
+		mysqli_query($conn, 'SET FOREIGN_KEY_CHECKS=1;');
+
+		echo '<script>';
+		echo 'document.addEventListener("DOMContentLoaded", function() {';
+		echo '  document.getElementById("myModalBtn").click();';
+		echo '});';
+		echo '</script>';
+
+	}else{
+		mysqli_query($conn, 'SET FOREIGN_KEY_CHECKS=1;');
+
+		echo '<script>';
+		echo 'document.addEventListener("DOMContentLoaded", function() {';
+		echo '  document.getElementById("myModalBtn2").click();';
+		echo '});';
+		echo '</script>';
+	}
     
     // enable foreign key checks
-    mysqli_query($conn, 'SET FOREIGN_KEY_CHECKS=1;');
-    
-    header("Location: search_database.php");
-    exit;
+
+
+
+	// header("Location: search_database.php");
+	// exit;
     }
 
 ?>
@@ -496,6 +514,59 @@ deleteModal
 			modalBodyInput.value = id
 		})
 	</script>
+
+    
+<!-- Button to trigger the modal -->
+<button id="myModalBtn" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" style="display:none;">
+  Open Modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel">Success</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>The student has been deleted successfully.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="redirect()">Okay</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Button to trigger the modal -->
+<button id="myModalBtn2" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal2" style="display:none;">
+  Open Modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal2" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel">Failed</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>The attempt to delete the student was unsuccessful.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="redirect()">Okay</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function redirect() {
+  window.location.href = 'search_database.php';
+}
+</script>
 	
 
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
