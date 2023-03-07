@@ -9,7 +9,9 @@ if(isset($_POST['save_course']))
     $number_of_days = mysqli_real_escape_string($conn, $_POST['number_of_days']);
     $mtap_course = mysqli_real_escape_string($conn, $_POST['mtap_course']);
     $implementation = mysqli_real_escape_string($conn, $_POST['implementation']);
-
+    $implementation_year = mysqli_real_escape_string($conn, $_POST['implementation_year']);
+    $implementation_year = date('01-01-' . $implementation_year);
+   
     $query = "
         SELECT * 
         FROM course 
@@ -17,6 +19,7 @@ if(isset($_POST['save_course']))
         AND number_of_days = '$number_of_day'
         AND mtap_course = '$mtap_course'
         AND implementation = '$implementation'
+        AND implementation_year = '$implementation_year'
         ";
     
     $query_run = mysqli_query($conn, $query);

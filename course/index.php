@@ -74,7 +74,7 @@
 					<input type="number" name="implementation_year" id = "implementation_year" class = "fs-5 p-2" placeholder = "<?= date('Y') ?>" min = "<?= (int)date('Y') ?>" >
 				</div>
 				<div class = "mt-5 form-check">
-					<input type="checkbox" name="mtap_course" id = "mtap-course" class = "form-check-input" style = "height:20px; width:20px; margin-right:10px">
+					<input type="checkbox" name="mtap_course" id = "mtap_course" class = "form-check-input" style = "height:20px; width:20px; margin-right:10px">
 					<label class = "form-check-label fs-5 fw-bold" style  ="color:#5b5b5b;" for = "mtap-course" required> MTAP Course</label>
 				</div>
 				<br>
