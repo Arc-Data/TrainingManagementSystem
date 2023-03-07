@@ -115,12 +115,12 @@ CREATE TABLE `course` (
 INSERT INTO `course` (`course_id`, `course_title`, `number_of_days`, `mtap_course`, `pre_requisite_course`, `implementation`, `year_certified`) VALUES
 (300000, 'Programming 1', 15, 0, NULL, '1st Quarter', 2000),
 (300001, 'Programming 2', 30, 0, 300000, '2nd Quarter', 1990),
-(300002, 'Object Oriented Programing', 0, 0, NULL, '1st Quarter', 1990),
-(300003, 'Calculus', 0, 0, NULL, '1st Quarter', 2000),
-(300004, 'Calculus 2', 0, 0, 300003, '1st Quarter', 2000),
-(300005, 'Information Management', 0, 0, NULL, '1st Quarter', 2010),
-(300006, 'Database Administration', 0, 0, 300005, '1st Quarter', 2010),
-(300007, 'Web Development', 0, 0, NULL, '1st Quarter', 2000),
+(300002, 'Object Oriented Programing', 1, 0, NULL, '1st Quarter', 1990),
+(300003, 'Calculus', 1, 0, NULL, '1st Quarter', 2000),
+(300004, 'Calculus 2', 1, 0, 300003, '1st Quarter', 2000),
+(300005, 'Information Management', 1, 0, NULL, '1st Quarter', 2010),
+(300006, 'Database Administration', 1, 0, 300005, '1st Quarter', 2010),
+(300007, 'Web Development', 1, 0, NULL, '1st Quarter', 2000),
 (300008, 'Mathematics', 30, 0, NULL, '1st Quarter', 2023),
 (300009, 'Arts', 30, 0, NULL, '1st Quarter', 2023),
 (300010, 'Programming 3', 30, 0, 300001, '1st Quarter', 2023),
@@ -150,14 +150,9 @@ INSERT INTO `pool_instructor_details` (`instructor_id`, `account_id`, `rank`, `q
 (700001, 100006, 'PCO', 'Bachelor\'s in Education', 'Computer Science', ''),
 (700002, 100012, 'PNCO', 'Master\'s Degree', 'Math', ''),
 (700003, 100013, 'NUP', 'Doctor of Education Degree', 'Information Technology', ''),
-(700008, NULL, 'NUP', 'Doctor of Education Degree', 'Information Technology', ''),
-(700009, NULL, 'NUP', 'Doctor of Education Degree', 'Information Technology', ''),
-(700010, NULL, '', '', '', ''),
-(700011, NULL, 'PCO', 'Master Degree', 'Information Technology', ''),
-(700012, NULL, 'NUP', 'Associates in Degree', 'Information Technology', ''),
-(700013, 100019, 'NUP', 'Doctor of Education Degree', 'Information Technology', ''),
-(700014, 100021, 'NUP', 'Doctor of Education Degree', 'Information Technology', ''),
-(700015, 100001, 'PCO', 'Associates in Degree', 'Information Technology', '');
+(700004, 100019, 'NUP', 'Doctor of Education Degree', 'Information Technology', ''),
+(700005, 100021, 'NUP', 'Doctor of Education Degree', 'Information Technology', ''),
+(700006, 100001, 'PCO', 'Associates in Degree', 'Information Technology', '');
 
 -- --------------------------------------------------------
 
