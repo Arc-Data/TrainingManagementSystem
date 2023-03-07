@@ -7,10 +7,10 @@
 
 	if(isset($_GET['search']) && !empty($_GET['search'])) {
 		$_SESSION['search'] = $_GET['search'];	
-		$searchQuery = "SELECT * FROM `course` WHERE course_title LIKE '%{$_GET['search']}%' ";
+		$searchQuery = "SELECT * FROM `course` WHERE course_title LIKE '{$_GET['search']}%' ";
 	}  else {
 		unset($_SESSION['search']);
-		$searchQuery = "SELECT * FROM `course` ";
+		$searchQuery = "SELECT * FROM `course` ORDER BY implementation_year, implementation, course_title ASC";
 	}
 
 	// querying displayed data per page
@@ -29,7 +29,7 @@
 
 	$offset = ($page - 1) * $itemsPerPage;
 
-	$query = $searchQuery . " LIMIT $itemsPerPage OFFSET $offset";
+	$query = $searchQuery . " LIMIT $itemsPerPage OFFSET $offset ";
 
 	$result = mysqli_query($conn, $query);
 
@@ -123,7 +123,7 @@
 							<tr>
 								<th style='width: 30%'>COURSE TITLE</th>
 								<th>DURATION</th>
-								<th>YEAR CERTIFIED</th>
+								<th>IMPLEMENTATION</th>
 								<th>PREREQUISITE</th>
 								<th></th>
 							</tr>
@@ -139,8 +139,8 @@
 								
 								<td class = "fs-5">
 									<?php 
-										$timestamp = strtotime($student['year_certified']); 
-										echo date("Y", $timestamp);
+										 
+										echo $student['implementation'] . " - " . $student['implementation_year'];
 									?>
 								</td>
 								<td class = "fs-5"> 
