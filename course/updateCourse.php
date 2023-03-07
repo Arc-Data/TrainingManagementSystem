@@ -40,17 +40,30 @@
               <label class = "fw-bold fs-5 mb-2" for='course-title'>Course Title <span class="asterisk"> *</span></label>
               <input class = "fs-5 p-2" value="<?php echo $result['course_title']?>" type="text" name="course_title" id='course-title' required>
             </div>
+
             <div class="row-box mb-3">
               <label class = "fw-bold fs-5 mb-2" for='number-of-days'>Number of Days to Complete <span class="asterisk"> *</span></label>
               <input class = "fs-5 p-2" value="<?php echo $result['number_of_days']?>" type="number" name="number_of_days" id='number-of-days' required>
             </div>
+
+            <div class="row-box mb-3">
+              <label class = "fw-bold fs-5 mb-2" for='course-title'>Year Certified <span class="asterisk"> *</span></label>
+              <input class = "fs-5 p-2" value="<?php echo $result['year_certified']?>" type="number" name="year_certified" id='year_certified' required>
+            </div>
+
             <div class="row-box mb-3">
               <label class = "fw-bold fs-5 mb-2" for='implementation'>Implementation</label>
               <input class = "fs-5 p-2" value="<?php echo $result['implementation']?>" type ="text" name="implementation" id='implementation'></input>
             </div>
+
             <div class="row-box mb-3">
-              <label class = "fw-bold fs-5 mb-2"  for='mtap-course'>MTAP Course</label>
-              <input class = "fs-5 p-2" value="<?php echo $result['mtap_course']?>" type="text" name="mtap_course" id='mtap-course'></input>
+              <label class = "fw-bold fs-5 mb-2" for='course-title'>Year Certified <span class="asterisk"> *</span></label>
+              <input class = "fs-5 p-2" value="<?php echo $result['implementation_year']?>" type="number" name="implementation_year" id='implementation_year' min = "<?= date('Y') ?>" required>
+            </div>
+
+            <div class="d-flex align-items-center mb-3 form-check fs-5">
+              <input class = "form-check-input" value="<?php echo $result['mtap_course']?>" type="checkbox" name="mtap_course" id='mtap-course' style = "width:30px; height:30px"></input>
+              <label class = "fw-bold form-check-label m-2"  for='mtap-course'>MTAP Course</label>
             </div>
             <button type="submit" name="update_course" class="save-changes-btn mt-4 fs-5">
               Save Changes
