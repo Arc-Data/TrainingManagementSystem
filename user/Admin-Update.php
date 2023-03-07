@@ -70,6 +70,7 @@ if (isset($_POST['save'])) {
 </style>
 
 <body>
+  <br><br><br><a href = "../user/Admin-Module.php" class = "text-decoration-none" style = "font-size:15px; color: #681a1a; margin-left: 10px">&#8592; Go Back</a>
   <div class="container my-5">
     <form method="post">
       <div class="form-group">
@@ -80,7 +81,7 @@ if (isset($_POST['save'])) {
 
       <div class="form-group">
         <label class=text-field-name>Password</label>
-        <input type="text" class="form-control" placeholder="Enter new password" name="password" autocomplete="off"
+        <input type="password" class="form-control" placeholder="Enter new password" name="password" autocomplete="off"
         value="<?php echo $password;?>">
       </div>
 
