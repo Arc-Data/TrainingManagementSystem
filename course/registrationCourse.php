@@ -81,10 +81,10 @@ $instructors = mysqli_query($conn, $sql_instructor);
                       <input class="input-box p-2 fs-5" style='width: 100%;' type="date" name="closing_date" id ='close-date' required>
                     </div>
                   </div>
-                  <div class="form-row mt-5 mb-3">
+                  <!-- <div class="form-row mt-5 mb-3">
                     <label class="lbl-name fs-5 mb-1" for='implement-nr'>Implementation NR <label class="asterisk">*</label></label>
                     <input class="input-box p-2 fs-5" type="text" name="implementation" id ='implement-nr' required>
-                  </div>
+                  </div> -->
                   <div>
                   <button name="register" type="submit" class="btn btn-primary mt-5 fs-5 pe-4 ps-4" id="register-btn" >REGISTER</button> 
                   </div>
