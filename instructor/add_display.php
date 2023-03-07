@@ -76,7 +76,7 @@ session_start();
 ?>
 </div>
 <br><br>
-<button class= 'button' ><a class = "text-decoration-none fa-solid fa-user-plus" style = "font-size:15px; color: white;" href="create_instructor.php"> Add New Instructor</a></button>
+<button class= 'button' ><a class="text-decoration-none fa-solid fa-user-plus" style = "font-size:15px; color: white;" href="create_instructor.php"> Add</a></button>
 
 </center>
 
