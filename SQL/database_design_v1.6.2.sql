@@ -138,7 +138,7 @@ INSERT INTO `course` (`course_id`, `course_title`, `number_of_days`, `mtap_cours
 CREATE TABLE `pool_instructor_details` (
   `instructor_id` int(11) NOT NULL,
   `account_id` int(11) DEFAULT NULL,
-  `rank` varchar(15) NOT NULL,
+  `rank` varchar(15) NOT NULL DEFAULT 'PCO',
   `qualification_degree` varchar(50) DEFAULT NULL,
   `course_specialization` varchar(50) NOT NULL,
   `other_qualification` varchar(50) DEFAULT NULL
