@@ -102,7 +102,6 @@ if(isset($_POST['register'])) {
     $instructor_id = mysqli_real_escape_string($conn, $_POST['instructor_id']);
     $opening_date = date('Y-m-d', strtotime($_POST['opening_date']));
     $closing_date = date('Y-m-d', strtotime($_POST['closing_date']));
-    $implementation_nr = mysqli_real_escape_string($conn, $_POST['implementation']);
 
     echo $opening_date . " " . $closing_date;
 
