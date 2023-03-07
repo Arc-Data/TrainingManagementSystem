@@ -53,7 +53,7 @@
 				<h2> ADD TRAINING FORM </h2>
 				<div class = "form-row mt-3">
 					<label for = 'course-title' class = "fw-bold" style="color: #5B5B5B">Course Title <span class="asterisk">*</span></label>
-					<input style='font-size: 17px;' type="text" name="course_title" id ='course-title' required>
+					<input style='font-size: 17px;' type="text" name="course_title" id ='course-title' placeholder = "Enter Course Title"required>
 				</div>
 				<div class = "form-row mt-2">
 					<label for = 'number-of-days' class = "fw-bold" style="color: #5B5B5B" >Number of Days <span class="asterisk">*</span></label>
@@ -67,8 +67,11 @@
 						<option value = "2">2nd Quarter</option>
 						<option value = "3">3rd Quarter</option>
 						<option value = "4">4th Quarter</option>
-						
 					</select>
+				</div>
+				<div class="form-row">
+					<label for = 'implementation_year' class = 'fw-bold' style = "color:#5b5b5b">Implementation Year</label>
+					<input type="number" name="implementation_year" id = "implementation_year" class = "fs-5 p-2" placeholder = "<?= date('Y') ?>" min = "<?= (int)date('Y') ?>" >
 				</div>
 				<div class = "mt-5 form-check">
 					<input type="checkbox" name="mtap_course" id = "mtap-course" class = "form-check-input" style = "height:20px; width:20px; margin-right:10px">
