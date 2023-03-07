@@ -1,5 +1,5 @@
 <link href='https://css.gg/check-o.css' rel='stylesheet'>
-<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<link rel="stylesheet" type="text/css" href="../css/style.css">
 
 <?php
     if(isset($_SESSION['message'])) :
