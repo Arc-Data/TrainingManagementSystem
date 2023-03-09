@@ -134,6 +134,8 @@
             SUM(CASE WHEN student.rank='NUP' THEN 1 ELSE 0 END) AS NUP,
             SUM(CASE WHEN student.rank='PNCO' THEN 1 ELSE 0 END) AS PNCO,
             SUM(CASE WHEN student.rank='PCO' THEN 1 ELSE 0 END) AS PCO,
+            SUM(CASE WHEN student.rank='CPU' THEN 1 ELSE 0 END) AS CPU,
+            SUM(CASE WHEN student.rank='PCOS' THEN 1 ELSE 0 END) AS PCOS,
             COUNT(DISTINCT student.student_id) AS total_ranks
             FROM student
             LEFT JOIN registration_participants_class ON student.student_id = registration_participants_class.student_id
@@ -153,17 +155,19 @@
     echo "<thead>
             <tr>
                 <th rowspan = '2'>COURSE TITLE</th>
-                <th colspan ='3'>RANK</th>
+                <th colspan ='5'><center> RANK </center></th>
                 <th rowspan = '2'>TOTAL RANK</th>
             </tr>
             <tr>
                 <th>NUP</th>
                 <th>PNCO</th>
                 <th>PCO</th>
+                <th>CPU</th>
+                <th>PCOS</th>
             </tr>
         </thead>";
         echo "<tr>";
-        echo "<td colspan = '5' style='color: maroon;'>Select Course To View Records</td>";
+        echo "<td colspan = '7' style='color: white;'>Select Course To View Records</td>";
         echo "</tr>";
 
     while ($row = $result->fetch_assoc()) {
@@ -172,6 +176,8 @@
         echo "<td>" . ($row["NUP"] ? $row["NUP"] : "0") . "</td>";
         echo "<td>" . ($row["PNCO"] ? $row["PNCO"] : "0") . "</td>";
         echo "<td>" . ($row["PCO"] ? $row["PCO"] : "0") . "</td>";
+        echo "<td>" . ($row["CPU"] ? $row["CPU"] : "0") . "</td>";
+        echo "<td>" . ($row["PCOS"] ? $row["PCOS"] : "0") . "</td>";
         echo "<td>" . $row["total_ranks"] . "</td>";
         echo "</tr>";
     }
