@@ -116,8 +116,8 @@ if(isset($_POST['register'])) {
     }
 
    $sql = "
-        INSERT INTO `registration_course` (course_id,instructor_id, opening_date, closing_date, implementation_nr)
-        VALUES ($course_id, $instructor_id, $opening_date, $closing_date, $implementation_nr)";
+        INSERT INTO `registration_course` (course_id,instructor_id, opening_date, closing_date)
+        VALUES ($course_id, $instructor_id, $opening_date, $closing_date)";
 
     $query = mysqli_query($conn, $sql);
 
