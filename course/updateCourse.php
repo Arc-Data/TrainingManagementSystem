@@ -63,7 +63,7 @@
             </div>
 
             <div class="row-box mb-3">
-              <label class = "fw-bold fs-5 mb-2" for='course-title'>Year Certified <span class="asterisk"> *</span></label>
+              <label class = "fw-bold fs-5 mb-2" for='course-title'>Implementation Year<span class="asterisk"> *</span></label>
               <input class = "fs-5 p-2" value="<?php echo $result['implementation_year']?>" type="number" name="implementation_year" id='implementation_year' min = "<?= date('Y') ?>" required>
             </div>
 
